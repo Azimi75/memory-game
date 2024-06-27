@@ -3,10 +3,14 @@ import "./Cards.css";
 import Card from "../card/Card";
 
 const Cards = ({ cards }) => {
+  const handleChoice = (card) => {
+    console.log(card);
+  };
+
   return (
     <>
-      {cards.map((c) => (
-        <Card card={c} />
+      {cards.map((card) => (
+        <Card card={card} key={card.id} handleChoice={handleChoice} />
       ))}
     </>
   );
